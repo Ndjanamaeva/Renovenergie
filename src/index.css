@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide in from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide down from top */
+.reveal-top {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scale/fade in */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Slide in from top-left corner */
+.reveal-tl {
+  opacity: 0;
+  transform: translate(-80px, -80px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal-tl.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Slide in from top-center */
+.reveal-tc {
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal-tc.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from top-right corner */
+.reveal-tr {
+  opacity: 0;
+  transform: translate(80px, -80px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal-tr.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Slide in from bottom-left corner */
+.reveal-bl {
+  opacity: 0;
+  transform: translate(-80px, 80px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal-bl.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Slide in from bottom-right corner */
+.reveal-br {
+  opacity: 0;
+  transform: translate(80px, 80px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal-br.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-eco-500 px-8 py-4 text-base font-semibold text-white shadow-soft transition-all duration-200 hover:bg-eco-600 hover:shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none;
+  }
+  .card-choice {
+    @apply relative flex cursor-pointer flex-col items-center gap-4 rounded-3xl border-2 border-slate-200 bg-white p-6 text-center shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-eco-400 hover:shadow-card;
+  }
+  .card-choice-selected {
+    @apply border-eco-500 shadow-selected;
+  }
+  .input-field {
+    @apply w-full rounded-2xl border-2 border-slate-200 bg-white px-5 py-4 text-lg text-slate-800 placeholder-slate-400 outline-none transition-all duration-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-100;
+  }
+}
